@@ -1,0 +1,44 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--side-color);
+	height: 72px;
+}
+
+.navbar .logo {
+	width: 72px;
+	height: 72px;
+}
+
+.navbar .section {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.navbar {
+		height: 80px;
+	}
+
+	.navbar .logo {
+		height: 80px;
+		width: 80px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.navbar {
+		width: 80px;
+		height: 100vh;
+		flex-direction: column;
+		border-top-right-radius: 20px;
+	}
+
+	.navbar .section {
+		flex-direction: column;
+		height: 160px;
+		width: 100%;
+	}
+}

@@ -1,0 +1,13 @@
+.theme-btn {
+	height: 100%;
+	aspect-ratio: 1/1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+	.theme-btn {
+		width: 100%;
+	}
+}
