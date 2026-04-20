@@ -1,0 +1,47 @@
+.status-badge {
+	width: 6.4rem;
+	height: 2.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 6px;
+}
+
+.status-badge.draft {
+	background-color: rgb(from var(--draft) r g b / 0.06);
+	color: var(--draft);
+}
+.status-badge.pending {
+	background-color: rgb(from var(--pending) r g b / 0.06);
+	color: var(--pending);
+}
+.status-badge.paid {
+	background-color: rgb(from var(--paid) r g b / 0.06);
+	color: var(--paid);
+}
+
+.status-badge .dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
+
+.status-badge.draft .dot {
+	background-color: var(--draft);
+}
+
+.status-badge.pending .dot {
+	background-color: var(--pending);
+}
+
+.status-badge.paid .dot {
+	background-color: var(--paid);
+}
+
+.status-badge .status {
+	text-transform: capitalize;
+	font-size: 0.9rem;
+	font-weight: 700;
+}

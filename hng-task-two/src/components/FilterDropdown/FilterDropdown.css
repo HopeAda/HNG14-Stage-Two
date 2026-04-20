@@ -1,0 +1,89 @@
+.filter {
+	position: relative;
+	width: 100px;
+}
+
+.filter button {
+	border: none;
+	background-color: transparent;
+	font-size: 0.9rem;
+	font-weight: 700;
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.filter button:focus-visible {
+	color: var(--accent-dark);
+	transition: color 0.3s;
+	outline: none;
+}
+
+.filter.open button .img-cont {
+	transform: rotate(180deg);
+	transition: tranform 0.5s;
+}
+
+.filter .display-name {
+	white-space: nowrap;
+	width: 40%;
+	overflow: hidden;
+}
+
+.filter .filter-list {
+	position: absolute;
+	top: calc(100% + 1.5rem);
+	left: 50%;
+	transform: translate(-50%);
+	width: 12rem;
+	padding: 1rem;
+	border-radius: 8px;
+	display: none;
+}
+
+.filter.open .filter-list {
+	display: block;
+}
+
+.filter .filter-list ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.filter .filter-list ul li {
+	height: 2rem;
+	font-size: 0.9rem;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	padding: 0 0.5rem;
+	gap: 1rem;
+	cursor: pointer;
+}
+
+.filter .filter-list ul li input[type="checkbox"] {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 2px;
+	accent-color: var(--accent-dark);
+}
+
+.filter .filter-list ul li input[type="checkbox"]:hover,
+.filter .filter-list ul li input[type="checkbox"]:focus-visible {
+	outline: 1px solid var(--accent-dark);
+}
+
+@media screen and (min-width: 768px) {
+	.filter {
+		width: 130px;
+	}
+	.filter .display-name {
+		width: 100%;
+	}
+}

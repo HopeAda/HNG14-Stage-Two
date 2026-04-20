@@ -1,0 +1,96 @@
+.invoice-item {
+	background-color: var(--white);
+	border-radius: 8px;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"id name"
+		"date ."
+		"price status";
+
+	box-shadow: 0 10 10 -10 rgb(from #48549f1a r g b / 0.1);
+}
+
+.invoice-item .id {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--grayish-blue-darker);
+	grid-area: id;
+}
+
+.invoice-item .id span {
+	color: var(--black);
+}
+
+.invoice-item .username {
+	font-size: 0.8rem;
+	color: var(--light-grayish-purple);
+	grid-area: name;
+	justify-self: flex-end;
+}
+
+.invoice-item .due-date {
+	font-weight: 500;
+	font-size: 0.8rem;
+	color: var(--grayish-blue-lighter);
+	grid-area: date;
+	position: relative;
+	left: 0;
+	top: 130%;
+}
+.invoice-item .price {
+	font-size: 0.9rem;
+	font-weight: 700;
+	grid-area: price;
+	align-self: flex-end;
+}
+
+.invoice-item .extra {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	grid-area: status;
+	justify-self: flex-end;
+}
+
+.invoice-item .extra .open-icon {
+	display: none;
+	transform: rotate(270deg);
+}
+
+@media screen and (min-width: 768px) {
+	.invoice-item {
+		padding: 1rem 1.5rem;
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		grid-template-areas: "id date name price status";
+		align-items: center;
+		justify-items: center;
+	}
+
+	.invoice-item .id {
+		justify-self: flex-start;
+	}
+
+	.invoice-item .username {
+		justify-self: flex-start;
+	}
+
+	.invoice-item .due-date {
+		justify-self: flex-start;
+		top: 0;
+		left: 0;
+	}
+
+	.invoice-item .price {
+		justify-self: flex-end;
+		align-self: center;
+	}
+
+	.invoice-item .extra .open-icon {
+		display: block;
+	}
+}
