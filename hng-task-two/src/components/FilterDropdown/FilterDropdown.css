@@ -25,9 +25,12 @@
 	outline: none;
 }
 
+.filter button .img-cont {
+	transition: transform 0.5s;
+}
+
 .filter.open button .img-cont {
 	transform: rotate(180deg);
-	transition: transform 0.5s;
 }
 
 .filter .display-name {
@@ -71,11 +74,16 @@
 	cursor: pointer;
 }
 
+.filter .filter-list ul li label {
+	cursor: pointer;
+}
+
 .filter .filter-list ul li input[type="checkbox"] {
 	width: 1rem;
 	height: 1rem;
 	border-radius: 2px;
 	accent-color: var(--accent-dark);
+	cursor: pointer;
 }
 
 .filter .filter-list ul li input[type="checkbox"]:hover,
