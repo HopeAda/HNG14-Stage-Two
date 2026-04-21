@@ -1,10 +1,11 @@
 import "./ProfilePic.css";
+import ProfileImg from "/profilepic.png";
 
 const ProfilePic = () => {
 	return (
 		<div className="profile">
 			<div className="container">
-				<img src="./profilepic.png" alt="" />
+				<img src={ProfileImg} alt="" />
 			</div>
 		</div>
 	);
