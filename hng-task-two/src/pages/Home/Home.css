@@ -12,10 +12,12 @@
 .home header h1 {
 	font-size: 1.5rem;
 	font-weight: 700;
+	color: var(--text);
 }
 .home header p {
 	font-size: 0.8rem;
 	font-weight: 600;
+	color: var(--text-muted);
 }
 
 .home header section:nth-of-type(2) {
@@ -119,10 +121,10 @@
 	justify-content: center;
 }
 
-.empty-list h1 {
+.empty-list h2 {
 	font-size: 1.5rem;
 	font-weight: 700;
-	color: var(--black);
+	color: var(--text);
 }
 
 .empty-list p {
@@ -130,5 +132,5 @@
 	text-align: center;
 	font-size: 0.9rem;
 	font-weight: 500;
-	color: var(--grayish-blue-lighter);
+	color: var(--text-muted);
 }

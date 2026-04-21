@@ -1,5 +1,4 @@
 :root {
-	--side-color: #373b53;
 	--grayish-blue: #494e6e;
 	--grayish-blue-darker: #7e88c3;
 	--grayish-blue-lighter: #888eb0;
@@ -11,15 +10,32 @@
 	--pending: #ff8f00;
 	--paid: #33d69f;
 	--draft: #373b53;
-	--bg: #f8f8fb;
 }
 
 :root[data-theme="dark"] {
+	--side-color: #1e2139;
 	--bg: #141625;
+	--bg-card: #1e2139;
+	--text: #ffffff;
+	--text-muted: #dfe3fa;
+	--price-banner-text-muted: #dfe3fa;
+	--input-bg: #1e2139;
+	--input-border: #252945;
+	--dropdown-bg: var(--input-border);
+	--dropdown-shadow: #00000040;
 }
 
-:root[dark-theme="light"] {
+:root[data-theme="light"] {
+	--side-color: #373b53;
 	--bg: #f8f8f8;
+	--bg-card: var(--white);
+	--text: #0c0e16;
+	--text-muted: #888eb0;
+	--price-banner-text-muted: #7e88c3;
+	--input-bg: var(--white);
+	--input-border: #dfe3fa;
+	--dropdown-bg: var(--white);
+	--dropdown-shadow: #48549f40;
 }
 
 * {

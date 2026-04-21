@@ -1,6 +1,7 @@
 .filter {
 	position: relative;
 	width: 100px;
+	color: var(--text);
 }
 
 .filter button {
@@ -15,6 +16,7 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	color: var(--text);
 }
 
 .filter button:focus-visible {
@@ -25,7 +27,7 @@
 
 .filter.open button .img-cont {
 	transform: rotate(180deg);
-	transition: tranform 0.5s;
+	transition: transform 0.5s;
 }
 
 .filter .display-name {
@@ -43,6 +45,8 @@
 	padding: 1rem;
 	border-radius: 8px;
 	display: none;
+	background-color: var(--dropdown-bg);
+	box-shadow: 0 10px 20px 0 var(--dropdown-shadow);
 }
 
 .filter.open .filter-list {

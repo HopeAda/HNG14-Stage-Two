@@ -6,7 +6,7 @@ const FilterDropdown = () => {
 		<div className="filter">
 			<button className="display">
 				<span className="display-name">Filter by status</span>
-				<span>
+				<span className="img-cont">
 					<img src={Caret} alt="" />
 				</span>
 			</button>

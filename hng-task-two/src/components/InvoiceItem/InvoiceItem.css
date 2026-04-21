@@ -1,5 +1,5 @@
 .invoice-item {
-	background-color: var(--white);
+	background-color: var(--bg-card);
 	border-radius: 8px;
 	padding: 1rem;
 	display: grid;
@@ -16,17 +16,17 @@
 .invoice-item .id {
 	font-size: 0.9rem;
 	font-weight: 700;
-	color: var(--grayish-blue-darker);
+	color: var(--text-muted);
 	grid-area: id;
 }
 
 .invoice-item .id span {
-	color: var(--black);
+	color: var(--text);
 }
 
 .invoice-item .username {
 	font-size: 0.8rem;
-	color: var(--light-grayish-purple);
+	color: var(--text-muted);
 	grid-area: name;
 	justify-self: flex-end;
 }
@@ -34,7 +34,7 @@
 .invoice-item .due-date {
 	font-weight: 500;
 	font-size: 0.8rem;
-	color: var(--grayish-blue-lighter);
+	color: var(--text-muted);
 	grid-area: date;
 	position: relative;
 	left: 0;
@@ -45,6 +45,7 @@
 	font-weight: 700;
 	grid-area: price;
 	align-self: flex-end;
+	color: var(--text);
 }
 
 .invoice-item .extra {

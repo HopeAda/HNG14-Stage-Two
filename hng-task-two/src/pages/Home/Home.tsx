@@ -5,13 +5,13 @@ import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import EmptyImg from "../../assets/empty-list.svg";
 
 const Home = () => {
-	const invoiceList = [];
+	const invoiceList = [2];
 
-	if (invoiceList.length == 0)
+	if (invoiceList.length === 0)
 		return (
 			<div className="empty-list">
 				<img src={EmptyImg} alt="" />
-				<h1>There is nothing here</h1>
+				<h2>There is nothing here</h2>
 				<p>
 					Create an invoice by clicking the New button and get started
 				</p>
