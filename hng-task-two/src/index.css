@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
 :root {
 	--grayish-blue: #494e6e;
 	--grayish-blue-darker: #7e88c3;
@@ -9,7 +11,7 @@
 	--white: #ffffff;
 	--pending: #ff8f00;
 	--paid: #33d69f;
-	--draft: #373b53;
+	--red: #ec5757;
 }
 
 :root[data-theme="dark"] {
@@ -23,9 +25,13 @@
 	--input-border: #252945;
 	--dropdown-bg: var(--input-border);
 	--dropdown-shadow: #00000040;
+	--draft: #dfe3fa;
+	--banner-bg: #252945;
+	--banner-total-bg: #0c0e16;
 }
 
 :root[data-theme="light"] {
+	--draft: #373b53;
 	--side-color: #373b53;
 	--bg: #f8f8f8;
 	--bg-card: var(--white);
@@ -36,6 +42,8 @@
 	--input-border: #dfe3fa;
 	--dropdown-bg: var(--white);
 	--dropdown-shadow: #48549f40;
+	--banner-bg: #f9fafe;
+	--banner-total-bg: var(--side-color);
 }
 
 * {
@@ -43,11 +51,13 @@
 	padding: 0;
 	box-sizing: border-box;
 	border: none;
+	font-family: "League Spartan", sans-serif;
 }
 
 body {
 	width: 100%;
 	min-height: 100vh;
+	overflow: hidden;
 }
 
 #root {
