@@ -1,0 +1,21 @@
+.text-input {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.text-input label {
+	color: var(--text-muted);
+	font-size: 0.8rem;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.text-input input {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--text);
+	background-color: var(--input-bg);
+	border: 1px solid var(--input-border);
+	width: 100%;
+}
