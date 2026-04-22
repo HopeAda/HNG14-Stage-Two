@@ -1,0 +1,30 @@
+.button {
+	padding: 1rem;
+	border-radius: 24px;
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-transform: capitalize;
+	width: fit-content;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.button.edit {
+	background-color: var(--banner-bg);
+	color: var(--text-muted);
+}
+
+.button.delete {
+	background-color: var(--red);
+}
+
+.button.mark {
+	background-color: var(--accent-dark);
+}
+
+@media screen and (min-width: 375px) {
+	.button {
+		padding: 1rem 1.5rem;
+	}
+}
