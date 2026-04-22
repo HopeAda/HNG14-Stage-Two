@@ -50,7 +50,9 @@ const FilterDropdown = () => {
 					setFilterOpen((prev) => !prev);
 				}}
 			>
-				<span className="display-name">Filter by status</span>
+				<span className="display-name">
+					Filter<span className="extra"> by status</span>
+				</span>
 				<span className="img-cont">
 					<img src={Caret} alt="" />
 				</span>
