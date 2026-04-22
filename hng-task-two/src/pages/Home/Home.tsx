@@ -3,8 +3,12 @@ import Plus from "../../assets/plus.svg";
 import FilterDropdown from "../../components/FilterDropdown/FilterDropdown";
 import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import EmptyImg from "../../assets/empty-list.svg";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Home = () => {
+	const navigate = useNavigate();
+	const location = useLocation();
+
 	const invoiceList = [2];
 
 	if (invoiceList.length === 0)
@@ -29,7 +33,14 @@ const Home = () => {
 				<section>
 					<FilterDropdown />
 
-					<button className="add-btn">
+					<button
+						className="add-btn"
+						onClick={() => {
+							navigate("/add", {
+								state: { backgroundLocation: location },
+							});
+						}}
+					>
 						<span className="img-cont">
 							<img src={Plus} alt="" />
 						</span>
