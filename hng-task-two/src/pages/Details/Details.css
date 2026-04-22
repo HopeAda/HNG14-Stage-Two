@@ -164,7 +164,7 @@ section.invoice-details {
 			"banner banner banner banner";
 	}
 
-	.sender-address {
+	.invoice-details .sender-address {
 		text-align: right;
 	}
 
