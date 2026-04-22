@@ -3,11 +3,19 @@ import Back from "../../assets/back.svg";
 import StatusBadge from "../../components/StatusBadge/StatusBadge";
 import Banner from "../../components/Banner/Banner";
 import Button from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Details = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="details-page">
-			<button className="back">
+			<button
+				className="back"
+				onClick={() => {
+					navigate("/");
+				}}
+			>
 				<img src={Back} alt="" />
 				<span>Go back</span>
 			</button>
