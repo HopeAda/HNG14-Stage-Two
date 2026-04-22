@@ -1,0 +1,125 @@
+.item-list {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.item-list input {
+	background-color: var(--input-bg);
+	border: 1px solid var(--input-border);
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.item-list .header {
+	display: none;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--text);
+}
+
+.item-list .header span {
+	white-space: nowrap;
+}
+
+.item-list .header .item-name {
+	grid-area: name;
+}
+.item-list .header .qty {
+	grid-area: qty;
+}
+.item-list .header .price {
+	grid-area: price;
+}
+.item-list .header .total {
+	grid-area: total;
+}
+
+.item-list .body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.item-list .add-item {
+	background-color: var(--input-bg);
+	border-radius: 24px;
+	width: 100%;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--text);
+	padding: 1rem 1.5rem;
+}
+
+.item-list-item {
+	display: grid;
+	grid-template-columns: 0.8fr 1.5fr 1.5fr 0.2fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"name name name name"
+		"qty price total trash";
+	row-gap: 2rem;
+	column-gap: 1rem;
+}
+
+.item-list-item .input-name {
+	grid-area: name;
+}
+
+.item-list-item .input-qty {
+	grid-area: qty;
+}
+
+.item-list .input-qty input {
+	padding: 1rem;
+}
+
+.item-list-item .input-price {
+	grid-area: price;
+}
+
+.item-list-item .total {
+	grid-area: total;
+	color: var(--text-muted);
+	font-weight: 700;
+	font-size: 0.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.item-list-item .delete-item {
+	grid-area: trash;
+	background-color: transparent;
+	height: fit-content;
+	/* align-self: center; */
+	padding-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+	.item-list {
+		gap: 1.5rem;
+	}
+
+	.item-list .header,
+	.item-list-item {
+		display: grid;
+		grid-template-columns: 2fr 0.7fr 1fr 1fr 0.3fr;
+		grid-template-areas: "name qty price total trash";
+		column-gap: 1rem;
+		row-gap: 0;
+	}
+
+	.item-list-item {
+		align-items: center;
+	}
+
+	.item-list-item .delete-item {
+		padding: 0;
+	}
+
+	.item-list-item label {
+		display: none;
+	}
+}
