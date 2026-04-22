@@ -1,0 +1,196 @@
+.details-page {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	color: var(--text);
+	height: 100vh;
+	overflow-y: scroll;
+	padding: 2rem 1.5rem 13rem 1.5rem;
+}
+
+button.back {
+	background-color: transparent;
+	display: flex;
+	gap: 1.5rem;
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 700;
+	padding: 2rem 0;
+}
+
+button.back img {
+	width: 6px;
+	height: 10px;
+}
+
+.details-page > section {
+	background-color: var(--bg-card);
+	border-radius: 8px;
+	box-shadow: 0 10px 10 -10px var(--dropdown-shadow);
+}
+
+.details-page > .status {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5rem;
+	align-items: center;
+}
+
+.details-page > .status > .status-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.details-page > .status > .status-info > p {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+}
+
+.details-page > .status > .buttons {
+	position: absolute;
+	display: flex;
+	background-color: var(--bg-card);
+	padding: 1rem 1.5rem;
+	justify-content: flex-end;
+	align-items: center;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	gap: min(1rem);
+}
+
+section.invoice-details {
+	padding: 1.5rem;
+	display: grid;
+	row-gap: 2rem;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"id ."
+		"sender ."
+		"inv client"
+		"due client"
+		"email ."
+		"banner banner";
+}
+
+.invoice-details .invoice-info {
+	display: flex;
+	flex-direction: column;
+	grid-area: id;
+}
+
+.invoice-details .id {
+	color: var(--price-banner-text-muted);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.invoice-details .id .id-name {
+	color: var(--text);
+}
+
+.invoice-details .sender-address {
+	display: flex;
+	flex-direction: column;
+	grid-area: sender;
+	gap: 0.5rem;
+}
+
+.large-white-text {
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.small-muted-text {
+	color: var(--text-muted);
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.invoice-details .invoice-date,
+.invoice-details .payment-due,
+.invoice-details .receiver-email {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.invoice-details .invoice-date {
+	grid-area: inv;
+}
+
+.invoice-details .payment-due {
+	grid-area: due;
+}
+
+.invoice-details .receiver-details {
+	grid-area: client;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.invoice-details .receiver-details > p {
+	margin-bottom: 5px;
+}
+
+.invoice-details .receiver-address {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.invoice-details .receiver-email {
+	grid-area: email;
+}
+
+.invoice-details .total-banner {
+	grid-area: banner;
+}
+
+@media screen and (min-width: 768px) {
+	.details-page > section {
+		padding: 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr auto;
+		row-gap: 2.5rem;
+		grid-template-areas:
+			"id . . sender"
+			"inv client email ."
+			"due client . ."
+			"banner banner banner banner";
+	}
+
+	.sender-address {
+		text-align: right;
+	}
+
+	.receiver-email {
+		justify-self: flex-end;
+	}
+
+	.details-page > .status > .buttons {
+		position: relative;
+		top: 0;
+		left: 0;
+		gap: 1.5rem;
+		width: fit-content;
+		padding: 0;
+	}
+
+	.details-page > .status > .status-info {
+		width: fit-content;
+		gap: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.details-page {
+		width: 100%;
+		min-height: 100%;
+		padding: 2rem 15%;
+	}
+}
