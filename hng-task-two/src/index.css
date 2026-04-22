@@ -12,6 +12,7 @@
 	--pending: #ff8f00;
 	--paid: #33d69f;
 	--red: #ec5757;
+	--text-add-h2: #777f98;
 }
 
 :root[data-theme="dark"] {
@@ -52,15 +53,20 @@
 	box-sizing: border-box;
 	border: none;
 	font-family: "League Spartan", sans-serif;
+	scrollbar-width: none;
 }
 
 body {
 	width: 100%;
 	min-height: 100vh;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 #root {
 	width: 100%;
 	min-height: 100vh;
+}
+
+button {
+	cursor: pointer;
 }
