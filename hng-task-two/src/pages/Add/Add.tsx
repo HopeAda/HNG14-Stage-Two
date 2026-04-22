@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import ItemList from "../../components/ItemList/ItemLIst";
+import ItemList from "../../components/ItemList/ItemList";
 import TextInput from "../../components/TextInput/TextInput";
 import "./Add.css";
 import { useNavigate } from "react-router-dom";
