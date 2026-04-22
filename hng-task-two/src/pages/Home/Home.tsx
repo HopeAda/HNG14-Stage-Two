@@ -33,12 +33,22 @@ const Home = () => {
 						<span className="img-cont">
 							<img src={Plus} alt="" />
 						</span>
-						<span className="btn-display">New Invoice</span>
+						<span className="btn-display">
+							<span>New </span>
+							<span className="extra"> Invoice</span>
+						</span>
 					</button>
 				</section>
 			</header>
 
 			<main className="invoice-list">
+				<InvoiceItem />
+				<InvoiceItem />
+				<InvoiceItem />
+				<InvoiceItem />
+				<InvoiceItem />
+				<InvoiceItem />
+				<InvoiceItem />
 				<InvoiceItem />
 				<InvoiceItem />
 				<InvoiceItem />
