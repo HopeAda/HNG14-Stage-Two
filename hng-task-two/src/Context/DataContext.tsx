@@ -26,10 +26,7 @@ type Client = {
 };
 
 export type Invoice = {
-<<<<<<< HEAD
-=======
 	id: string;
->>>>>>> feature/addinvoice-page
 	description: string;
 	client: Client;
 	sender: Address;
