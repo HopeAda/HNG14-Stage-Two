@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 const API_URL = "http://localhost:3000/api/invoices";
 
-type Status = "draft" | "pending" | "paid";
+export type Status = "draft" | "pending" | "paid";
 
 type Address = {
 	street: string;
@@ -16,6 +16,7 @@ type InvoiceItem = {
 	qty: number;
 	price: number;
 	total: number;
+	id: string;
 };
 
 type Client = {
@@ -24,9 +25,8 @@ type Client = {
 	address: Address;
 };
 
-type Invoice = {
-	id: string;
-	descripton: string;
+export type Invoice = {
+	description: string;
 	client: Client;
 	sender: Address;
 	items: InvoiceItem[];
