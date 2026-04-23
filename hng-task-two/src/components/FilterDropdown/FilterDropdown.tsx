@@ -8,7 +8,11 @@ type Filter = {
 	paid: boolean;
 };
 
-const FilterDropdown = () => {
+type FilterProps = {
+	filterFunction: (condition: object) => void;
+};
+
+const FilterDropdown = ({ filterFunction }: FilterProps) => {
 	const [filterConditions, setFilterConditions] = useState<Filter>({
 		draft: false,
 		pending: false,
@@ -41,6 +45,10 @@ const FilterDropdown = () => {
 			document.removeEventListener("mousedown", handleOutsideClick);
 		};
 	}, []);
+
+	useEffect(() => {
+		filterFunction(filterConditions);
+	}, [filterConditions, filterFunction]);
 
 	return (
 		<div className={`filter ${filterOpen ? "open" : ""}`} ref={dropdownRef}>

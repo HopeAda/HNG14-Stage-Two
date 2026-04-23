@@ -12,6 +12,9 @@
 	--pending: #ff8f00;
 	--paid: #33d69f;
 	--red: #ec5757;
+	--text-add-h2: #777f98;
+	--discard-bg: #f9fafe;
+	--cancel-bg: #373b53;
 }
 
 :root[data-theme="dark"] {

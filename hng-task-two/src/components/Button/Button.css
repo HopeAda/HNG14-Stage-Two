@@ -10,6 +10,10 @@
 	cursor: pointer;
 }
 
+.button:disabled {
+	cursor: not-allowed;
+}
+
 .button.edit {
 	background-color: var(--banner-bg);
 	color: var(--text-muted);
@@ -17,10 +21,41 @@
 
 .button.delete {
 	background-color: var(--red);
+	color: var(--white);
 }
 
 .button.mark {
 	background-color: var(--accent-dark);
+	color: var(--white);
+}
+
+.button.discard {
+	background-color: var(--discard-bg);
+	color: var(--grayish-blue-darker);
+}
+
+.button.cancel,
+.button.save-draft {
+	background-color: var(--cancel-bg);
+}
+
+.button.save-draft {
+	text-transform: none;
+}
+
+.button.save-send,
+.button.save-changes {
+	background-color: var(--accent-dark);
+}
+
+.button.save-send:hover,
+.button.save-send:focus-visible {
+	background-color: var(--accent-hover);
+}
+
+.button.save-changes:hover,
+.button.save-changes:focus-visible {
+	background-color: var(--accent-hover);
 }
 
 @media screen and (min-width: 375px) {

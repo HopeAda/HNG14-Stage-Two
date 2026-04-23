@@ -1,27 +1,40 @@
+import type { Invoice } from "../../Context/DataContext";
 import "./Banner.css";
 
-const BannerInvoiceItem = () => {
+type BannerProps = {
+	data: Invoice["items"];
+	total: number;
+};
+
+type BannerItemProps = {
+	data: Invoice["items"][number];
+};
+
+const BannerInvoiceItem = ({ data }: BannerItemProps) => {
 	return (
 		<article className="banner-item">
 			<div className="details-info">
-				<span className="name">Banner Design</span>
-				<span className="qty">1 x $ 156.00</span>
+				<span className="name">{data.name}</span>
+				<span className="qty">
+					{data.qty} x £ {data.price}
+				</span>
 			</div>
-			<div className="item-total">$ 156.00</div>
+			<div className="item-total">£ {data.total}</div>
 		</article>
 	);
 };
 
-const Banner = () => {
+const Banner = ({ data, total }: BannerProps) => {
 	return (
 		<section className="total-banner">
 			<div className="banner-invoice-list">
-				<BannerInvoiceItem />
-				<BannerInvoiceItem />
+				{data.map((itm) => (
+					<BannerInvoiceItem key={itm.id} data={itm} />
+				))}
 			</div>
 			<div className="total">
 				<span className="title">Amount Due</span>
-				<span className="total-price">$ 566.00</span>
+				<span className="total-price">£ {total}</span>
 			</div>
 		</section>
 	);

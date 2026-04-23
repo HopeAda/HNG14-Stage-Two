@@ -22,12 +22,14 @@ type Client = {
 	address: Address;
 };
 
-type Invoice = {
+export type Invoice = {
 	id: string;
-	descripton: string;
+	description: string;
 	client: Client;
 	sender: Address;
 	items: InvoiceItem[];
+	dateCreated: string;
+	paymentTerm: number;
 	dueDate: string;
 	status: Status;
 	total: number;
@@ -52,10 +54,26 @@ export const DataContextProvider = ({ children }: DataProviderProps) => {
 		setInvoices((prev) => [...prev, invoice]);
 	};
 
-	const editInvoice = (id: string, updatedInvoice: Invoice) => {
-		setInvoices((prev) =>
-			prev.map((itm) => (itm.id === id ? updatedInvoice : itm)),
-		);
+	const editInvoice = async (id: string, updatedInvoice: Invoice) => {
+		try {
+			const res = await fetch(`${API_URL}/${id}`, {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(updatedInvoice),
+			});
+
+			if (!res.ok) throw new Error("Failed to update invoice");
+
+			const data: Invoice = await res.json();
+
+			setInvoices((prev) =>
+				prev.map((itm) => (itm.id === id ? data : itm)),
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	const deleteInvoice = (id: string) => {

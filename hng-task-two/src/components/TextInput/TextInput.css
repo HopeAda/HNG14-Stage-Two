@@ -4,11 +4,31 @@
 	gap: 0.5rem;
 }
 
+.text-input > div {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
 .text-input label {
 	color: var(--text-muted);
 	font-size: 0.8rem;
 	font-weight: 500;
 	white-space: nowrap;
+}
+
+.text-input.error label {
+	color: var(--red);
+}
+
+.text-input p.err-msg {
+	font-size: 0.7rem;
+	color: var(--red);
+	display: none;
+}
+
+.text-input.error p.err-msg {
+	display: block;
 }
 
 .text-input input {
@@ -18,4 +38,8 @@
 	background-color: var(--input-bg);
 	border: 1px solid var(--input-border);
 	width: 100%;
+}
+
+.text-input.error input {
+	border: 1px solid var(--red);
 }
