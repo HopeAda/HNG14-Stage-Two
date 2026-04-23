@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { Invoice } from "../types/invoice";
+import { Invoice } from "../types/invoice.js";
 
 const AddressSchema = new Schema({
 	street: String,

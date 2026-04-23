@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import InvoiceModel from "../models/InvoiceModel";
+import InvoiceModel from "../models/InvoiceModel.js";
 
 export const getInvoices = async (
 	req: Request,
