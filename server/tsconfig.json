@@ -7,7 +7,7 @@
 
 		// Environment Settings
 		// See also https://aka.ms/tsconfig/module
-		"module": "commonjs",
+		"module": "esnext",
 		"target": "es2020",
 		// "types": ["node"],
 		// For nodejs:
@@ -33,7 +33,7 @@
 		// "noPropertyAccessFromIndexSignature": true,
 
 		// Recommended Options
-		// "moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"strict": true,
 		// "jsx": "react-jsx",
 		// "verbatimModuleSyntax": false,
