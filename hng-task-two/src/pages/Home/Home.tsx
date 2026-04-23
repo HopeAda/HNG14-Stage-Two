@@ -4,12 +4,15 @@ import FilterDropdown from "../../components/FilterDropdown/FilterDropdown";
 import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import EmptyImg from "../../assets/empty-list.svg";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import DataContext from "../../Context/DataContext";
 
 const Home = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
+	const ctx = useContext(DataContext);
 
-	const invoiceList = [2];
+	const invoiceList = ctx?.invoices || [];
 
 	if (invoiceList.length === 0)
 		return (
@@ -53,17 +56,9 @@ const Home = () => {
 			</header>
 
 			<main className="invoice-list">
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
-				<InvoiceItem />
+				{invoiceList.map((itm) => (
+					<InvoiceItem data={itm} key={itm.id} />
+				))}
 			</main>
 		</div>
 	);
