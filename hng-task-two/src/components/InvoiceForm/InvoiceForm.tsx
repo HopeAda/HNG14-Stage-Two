@@ -123,16 +123,6 @@ const InvoiceForm = ({ mode, initialData }: InvoiceFormProps) => {
 		return !emailError && !requiredError;
 	};
 
-	const dueDate = (() => {
-		const createdDate = new Date(formData.dateCreated);
-
-		createdDate.setHours(0, 0, 0, 0);
-
-		createdDate.setDate(createdDate.getDate() + formData.paymentTerm);
-
-		return createdDate.toISOString();
-	})();
-
 	useEffect(() => {
 		const handleEscBtn = (e: KeyboardEvent) => {
 			if (overlayRef.current && e.key == "Escape") {

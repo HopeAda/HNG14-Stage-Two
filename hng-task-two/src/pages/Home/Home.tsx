@@ -5,9 +5,9 @@ import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import EmptyImg from "../../assets/empty-list.svg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
-import DataContext, { type Invoice } from "../../Context/DataContext";
+import DataContext from "../../Context/DataContext";
 
-type Filter = {
+export type Filter = {
 	draft: boolean;
 	pending: boolean;
 	paid: boolean;

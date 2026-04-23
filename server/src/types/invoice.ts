@@ -27,6 +27,8 @@ export type Invoice = {
 	client: Client;
 	sender: Address;
 	items: InvoiceItem[];
+	dateCreated: string;
+	paymentTerm: number;
 	dueDate: string;
 	status: Status;
 	total: number;

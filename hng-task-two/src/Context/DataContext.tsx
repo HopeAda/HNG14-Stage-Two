@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-const API_URL = "http://localhost:3000/api/invoices";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/invoices`;
 
 export type Status = "draft" | "pending" | "paid";
 

@@ -1,15 +1,10 @@
 import "./FilterDropdown.css";
 import Caret from "../../assets/caret-down.svg";
 import { useState, useRef, useEffect } from "react";
-
-type Filter = {
-	draft: boolean;
-	pending: boolean;
-	paid: boolean;
-};
+import type { Filter } from "../../pages/Home/Home";
 
 type FilterProps = {
-	filterFunction: (condition: object) => void;
+	filterFunction: (condition: Filter) => void;
 };
 
 const FilterDropdown = ({ filterFunction }: FilterProps) => {

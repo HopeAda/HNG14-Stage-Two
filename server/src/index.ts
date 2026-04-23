@@ -7,8 +7,8 @@ import InvoiceRoutes from "./routes/invoiceRoutes";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
-const MONGO_URI = process.env.MONGO_URI;
+const PORT = process.env.VITE_PORT;
+const MONGO_URI = process.env.VITE_MONGO_URI;
 
 app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
