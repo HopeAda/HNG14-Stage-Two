@@ -1,10 +1,15 @@
 import "./StatusBadge.css";
+import type { Status } from "../../Context/DataContext";
 
-const StatusBadge = () => {
+type statusProps = {
+	type: Status;
+};
+
+const StatusBadge = ({ type }: statusProps) => {
 	return (
-		<div className="status-badge paid">
+		<div className={`status-badge ${type}`}>
 			<span className="dot"></span>
-			<span className="status">Paid</span>
+			<span className="status">{type}</span>
 		</div>
 	);
 };
