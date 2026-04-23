@@ -1,0 +1,67 @@
+.datepicker {
+	position: relative;
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 700;
+	width: 100%;
+	height: 48px;
+}
+
+.datepicker-input {
+	background: var(--dropdown-bg);
+	padding: 1rem 1.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 48px;
+}
+
+.calendar {
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	width: 100%;
+	background: var(--dropdown-bg);
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 0 10px 10px -10px var(--dropdown-bg);
+	z-index: 100;
+	padding: 2rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	z-index: 100;
+}
+
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.calendar-header button {
+	background-color: transparent;
+}
+
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	row-gap: 5px;
+	margin-top: 1rem;
+}
+
+.day {
+	text-align: center;
+	padding: 8px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.day:hover {
+	background: #334155;
+}
+
+.day.selected {
+	color: var(--accent-dark);
+}
