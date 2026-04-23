@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+
+const API_URL = "http://localhost:3000/api/invoices";
 
 type Status = "draft" | "pending" | "paid";
 
@@ -48,18 +50,81 @@ type DataProviderProps = { children: React.ReactNode };
 export const DataContextProvider = ({ children }: DataProviderProps) => {
 	const [invoices, setInvoices] = useState<Invoice[]>([]);
 
-	const addInvoice = (invoice: Invoice) => {
-		setInvoices((prev) => [...prev, invoice]);
+	useEffect(() => {
+		const fetchInvoices = async () => {
+			try {
+				const res = await fetch(API_URL);
+
+				if (!res.ok) {
+					throw new Error("Failed to fetch");
+				}
+
+				const data = await res.json();
+
+				// console.log(data);
+				setInvoices(data || []);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		fetchInvoices();
+	}, []);
+
+	const addInvoice = async (invoice: Invoice) => {
+		try {
+			const res = await fetch(API_URL, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(invoice),
+			});
+
+			if (!res.ok) throw new Error("Failed to create new invoice");
+
+			const data: Invoice = await res.json();
+
+			setInvoices((prev) => [...prev, data]);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
-	const editInvoice = (id: string, updatedInvoice: Invoice) => {
-		setInvoices((prev) =>
-			prev.map((itm) => (itm.id === id ? updatedInvoice : itm)),
-		);
+	const editInvoice = async (id: string, updatedInvoice: Invoice) => {
+		try {
+			const res = await fetch(API_URL, {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(updatedInvoice),
+			});
+
+			if (!res.ok) throw new Error("Failed to update invoice");
+
+			const data: Invoice = await res.json();
+
+			setInvoices((prev) =>
+				prev.map((itm) => (itm.id === id ? data : itm)),
+			);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
-	const deleteInvoice = (id: string) => {
-		setInvoices((prev) => prev.filter((itm) => itm.id !== id));
+	const deleteInvoice = async (id: string) => {
+		try {
+			const res = await fetch(`${API_URL}/${id}`, {
+				method: "DELETE",
+			});
+
+			if (!res.ok) throw new Error("Failed to delete");
+
+			setInvoices((prev) => prev.filter((itm) => itm.id !== id));
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	const getInvoiceById = (id: string) => {
