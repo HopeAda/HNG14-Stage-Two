@@ -65,6 +65,7 @@
 
 .item-list-item .input-name {
 	grid-area: name;
+	width: 100%;
 }
 
 .item-list-item .input-qty {

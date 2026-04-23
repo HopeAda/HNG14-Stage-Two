@@ -11,6 +11,11 @@
 		"price status";
 
 	box-shadow: 0 10 10 -10 rgb(from #48549f1a r g b / 0.1);
+	cursor: pointer;
+}
+
+.invoice-item:active {
+	border: 1px solid var(--accent-hover);
 }
 
 .invoice-item .id {
@@ -22,6 +27,7 @@
 
 .invoice-item .id span {
 	color: var(--text);
+	text-transform: uppercase;
 }
 
 .invoice-item .username {
@@ -29,6 +35,7 @@
 	color: var(--text-muted);
 	grid-area: name;
 	justify-self: flex-end;
+	text-transform: capitalize;
 }
 
 .invoice-item .due-date {

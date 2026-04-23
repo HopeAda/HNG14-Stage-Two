@@ -8,10 +8,7 @@ export type Address = {
 };
 
 export type InvoiceItem = {
-<<<<<<< Updated upstream
-=======
 	id: string;
->>>>>>> Stashed changes
 	name: string;
 	qty: number;
 	price: number;
@@ -26,7 +23,7 @@ export type Client = {
 
 export type Invoice = {
 	id: string;
-	descripton: string;
+	description: string;
 	client: Client;
 	sender: Address;
 	items: InvoiceItem[];

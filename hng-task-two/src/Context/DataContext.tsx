@@ -26,10 +26,16 @@ type Client = {
 };
 
 export type Invoice = {
+<<<<<<< HEAD
+=======
+	id: string;
+>>>>>>> feature/addinvoice-page
 	description: string;
 	client: Client;
 	sender: Address;
 	items: InvoiceItem[];
+	dateCreated: string;
+	paymentTerm: number;
 	dueDate: string;
 	status: Status;
 	total: number;
@@ -93,7 +99,7 @@ export const DataContextProvider = ({ children }: DataProviderProps) => {
 
 	const editInvoice = async (id: string, updatedInvoice: Invoice) => {
 		try {
-			const res = await fetch(API_URL, {
+			const res = await fetch(`${API_URL}/${id}`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",

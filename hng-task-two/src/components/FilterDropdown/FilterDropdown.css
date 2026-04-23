@@ -71,10 +71,13 @@
 	padding: 0 0.5rem;
 	gap: 1rem;
 	cursor: pointer;
+	width: 100%;
 }
 
 .filter .filter-list ul li label {
 	cursor: pointer;
+	width: 100%;
+	padding: 0.5rem 0;
 }
 
 .filter .filter-list ul li input[type="checkbox"] {

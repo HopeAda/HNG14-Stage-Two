@@ -18,7 +18,7 @@ const ItemSchema = new Schema({
 
 const InvoiceSchema = new Schema<Invoice>({
 	id: { type: String, required: true },
-	description: { type: String, required: true },
+	description: { type: String },
 
 	sender: AddressSchema,
 
@@ -30,13 +30,16 @@ const InvoiceSchema = new Schema<Invoice>({
 
 	items: [ItemSchema],
 
+	dateCreated: String,
 	dueDate: String,
+	paymentTerm: Number,
 
 	status: {
 		type: String,
 		enum: ["draft", "pending", "paid"],
-		default: "draft",
 	},
+
+	total: Number,
 });
 
 export default mongoose.model<Invoice>("Invoice", InvoiceSchema);

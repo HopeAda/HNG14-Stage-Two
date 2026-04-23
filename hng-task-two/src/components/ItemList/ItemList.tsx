@@ -25,7 +25,7 @@ const ItemListItem = ({
 		<div className="item-list-item">
 			<TextInput
 				label="Item Name"
-				itemId={`name-${index}`}
+				itemId={`input-name`}
 				value={item.name}
 				onChange={(e) => {
 					updateItem(index, { ...item, name: e.target.value });

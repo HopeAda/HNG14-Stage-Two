@@ -4,37 +4,55 @@ import FilterDropdown from "../../components/FilterDropdown/FilterDropdown";
 import InvoiceItem from "../../components/InvoiceItem/InvoiceItem";
 import EmptyImg from "../../assets/empty-list.svg";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext } from "react";
-import DataContext from "../../Context/DataContext";
+import { useContext, useState } from "react";
+import DataContext, { type Invoice } from "../../Context/DataContext";
+
+type Filter = {
+	draft: boolean;
+	pending: boolean;
+	paid: boolean;
+};
 
 const Home = () => {
+	const ctx = useContext(DataContext);
 	const navigate = useNavigate();
 	const location = useLocation();
-	const ctx = useContext(DataContext);
 
-	const invoiceList = ctx?.invoices || [];
+	const [filter, setFilter] = useState<Filter>({
+		draft: false,
+		pending: false,
+		paid: false,
+	});
 
-	if (invoiceList.length === 0)
-		return (
-			<div className="empty-list">
-				<img src={EmptyImg} alt="" />
-				<h2>There is nothing here</h2>
-				<p>
-					Create an invoice by clicking the New button and get started
-				</p>
-			</div>
-		);
+	const invoiceList: Invoice = ctx?.invoices;
+
+	const filteredInvoiceList = Object.values(filter).every((v) => v === false)
+		? invoiceList
+		: invoiceList.filter((item) => filter[item.status]);
+
 	return (
 		<div className="home">
 			<header>
 				<section>
 					<h1>Invoices</h1>
 					<p>
-						<span>7</span> invoices
+						{filteredInvoiceList.length == 0
+							? "No Invoices"
+							: filter.draft && !filter.pending && !filter.paid
+								? `${filteredInvoiceList.length} drafted invoice${filteredInvoiceList.length == 1 ? "" : "s"}`
+								: !filter.draft &&
+									  filter.pending &&
+									  !filter.paid
+									? `${filteredInvoiceList.length} pending invoice${filteredInvoiceList.length == 1 ? "" : "s"}`
+									: !filter.draft &&
+										  !filter.pending &&
+										  filter.paid
+										? `${filteredInvoiceList.length} paid invoice${filteredInvoiceList.length == 1 ? "" : "s"}`
+										: `${invoiceList.length} total invoice${invoiceList.length == 1 ? "" : "s"}`}
 					</p>
 				</section>
 				<section>
-					<FilterDropdown />
+					<FilterDropdown filterFunction={setFilter} />
 
 					<button
 						className="add-btn"
@@ -55,11 +73,22 @@ const Home = () => {
 				</section>
 			</header>
 
-			<main className="invoice-list">
-				{invoiceList.map((itm) => (
-					<InvoiceItem data={itm} key={itm.id} />
-				))}
-			</main>
+			{filteredInvoiceList.length === 0 ? (
+				<div className="empty-list">
+					<img src={EmptyImg} alt="" />
+					<h2>There is nothing here</h2>
+					<p>
+						Create an invoice by clicking the New button and get
+						started
+					</p>
+				</div>
+			) : (
+				<main className="invoice-list">
+					{filteredInvoiceList.map((itm) => (
+						<InvoiceItem data={itm} key={itm.id} />
+					))}
+				</main>
+			)}
 		</div>
 	);
 };

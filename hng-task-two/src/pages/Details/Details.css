@@ -1,3 +1,7 @@
+body:has(.delete-modal-overlay) {
+	overflow: hidden;
+}
+
 .details-page {
 	display: flex;
 	flex-direction: column;
@@ -85,10 +89,12 @@ section.invoice-details {
 	color: var(--price-banner-text-muted);
 	font-size: 0.9rem;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .invoice-details .id .id-name {
 	color: var(--text);
+	text-transform: uppercase;
 }
 
 .invoice-details .sender-address {
@@ -151,6 +157,50 @@ section.invoice-details {
 	grid-area: banner;
 }
 
+.delete-modal-overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.delete-modal-overlay .delete-modal-card {
+	background-color: var(--bg-card);
+	padding: 2rem;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 90%;
+	height: fit-content;
+}
+
+.delete-modal-overlay .delete-modal-card h1 {
+	font-weight: 700;
+	color: var(--text);
+	font-size: 1.5rem;
+}
+
+.delete-modal-overlay .delete-modal-card > span {
+	color: var(--text-muted);
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+.delete-modal-overlay .buttons {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	gap: 1rem;
+}
+
+.delete-modal-overlay .buttons button {
+	padding: 1rem 2rem;
+	color: var(--white);
+}
+
 @media screen and (min-width: 768px) {
 	.details-page > section {
 		padding: 2rem;
@@ -184,6 +234,10 @@ section.invoice-details {
 	.details-page > .status > .status-info {
 		width: fit-content;
 		gap: 1.5rem;
+	}
+
+	.delete-modal-card {
+		max-width: 480px;
 	}
 }
 

@@ -33,9 +33,9 @@ export const updateInvoice = async (
 ): Promise<void> => {
 	try {
 		const updated = await InvoiceModel.findOneAndUpdate(
-			{ id: req.params.id },
+			{ id: req.params.id as string },
 			req.body,
-			{ new: true },
+			{ returnDocument: "after" },
 		);
 
 		if (!updated) {
@@ -55,7 +55,7 @@ export const deleteInvoice = async (
 ): Promise<void> => {
 	try {
 		const deleted = await InvoiceModel.findOneAndDelete({
-			id: req.params.id,
+			id: req.params.id as string,
 		});
 		if (!deleted) {
 			res.status(404).json({ message: "Invoice not found" });

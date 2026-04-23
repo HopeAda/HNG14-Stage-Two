@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 import Details from "./pages/Details/Details";
 import Add from "./pages/Add/Add";
+import Edit from "./pages/Edit/Edit";
 
 const App = () => {
 	const location = useLocation();
@@ -15,12 +16,15 @@ const App = () => {
 			<Routes location={state?.backgroundLocation || location}>
 				<Route element={<Home />} path="/" />
 				<Route element={<Details />} path="/details/:id" />
+				<Route element={<Details />} path="/details/:id" />
 				<Route element={<Add />} path="/add" />
+				<Route element={<Edit />} path="/edit/:id" />
 			</Routes>
 
 			{state?.backgroundLocation && (
 				<Routes>
 					<Route element={<Add />} path="/add" />
+					<Route element={<Edit />} path="/edit/:id" />
 				</Routes>
 			)}
 		</div>
