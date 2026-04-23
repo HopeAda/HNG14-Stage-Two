@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.VITE_PORT;
 const MONGO_URI = process.env.VITE_MONGO_URI;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.FRONTEND_URL }));
 app.use(express.json());
 app.use("/api/invoices", InvoiceRoutes);
 
