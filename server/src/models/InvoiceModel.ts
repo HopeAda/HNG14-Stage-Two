@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import mongoose, { Schema, Document } from "mongoose";
+=======
+import mongoose, { Schema } from "mongoose";
+>>>>>>> Stashed changes
 import { Invoice } from "../types/invoice";
 
 const AddressSchema = new Schema({
@@ -9,6 +13,10 @@ const AddressSchema = new Schema({
 });
 
 const ItemSchema = new Schema({
+<<<<<<< Updated upstream
+=======
+	id: String,
+>>>>>>> Stashed changes
 	name: String,
 	qty: Number,
 	price: Number,
@@ -34,7 +42,11 @@ const InvoiceSchema = new Schema<Invoice>({
 	status: {
 		type: String,
 		enum: ["draft", "pending", "paid"],
+<<<<<<< Updated upstream
 		default: "pending",
+=======
+		default: "draft",
+>>>>>>> Stashed changes
 	},
 });
 

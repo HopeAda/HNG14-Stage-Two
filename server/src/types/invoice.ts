@@ -8,6 +8,10 @@ export type Address = {
 };
 
 export type InvoiceItem = {
+<<<<<<< Updated upstream
+=======
+	id: string;
+>>>>>>> Stashed changes
 	name: string;
 	qty: number;
 	price: number;
