@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import InvoiceRoutes from "./routes/invoiceRoutes";
+import InvoiceRoutes from "./routes/invoiceRoutes.js";
 
 dotenv.config();
 
