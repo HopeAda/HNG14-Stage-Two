@@ -24,7 +24,7 @@ const Home = () => {
 		paid: false,
 	});
 
-	const invoiceList: Invoice = ctx?.invoices;
+	const invoiceList = ctx?.invoices || [];
 
 	const filteredInvoiceList = Object.values(filter).every((v) => v === false)
 		? invoiceList
