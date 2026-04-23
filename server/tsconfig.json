@@ -33,9 +33,10 @@
 		// "noPropertyAccessFromIndexSignature": true,
 
 		// Recommended Options
+		"moduleResolution": "node",
 		"strict": true,
-		"jsx": "react-jsx",
-		"verbatimModuleSyntax": false,
+		// "jsx": "react-jsx",
+		// "verbatimModuleSyntax": false,
 		"isolatedModules": true,
 		"noUncheckedSideEffectImports": true,
 		"moduleDetection": "force",
