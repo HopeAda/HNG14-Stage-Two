@@ -28,7 +28,7 @@ const InvoiceItem = ({ data }: ItemProviderProps) => {
 					year: "numeric",
 				})}
 			</span>
-			<span className="price">£ {data.total.toLocaleString('en-US')}</span>
+			<span className="price">£ {data.total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
 			<div className="extra">
 				<StatusBadge type={data.status} />
 				<img src={Caret} className="open-icon" />
