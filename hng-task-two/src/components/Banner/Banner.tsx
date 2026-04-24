@@ -16,10 +16,10 @@ const BannerInvoiceItem = ({ data }: BannerItemProps) => {
 			<div className="details-info">
 				<span className="name">{data.name}</span>
 				<span className="qty">
-					{data.qty} x £ {data.price}
+					{data.qty} x £ {data.price.toLocaleString('en-US')}
 				</span>
 			</div>
-			<div className="item-total">£ {data.total}</div>
+			<div className="item-total">£ {data.total.toLocaleString('en-US')}</div>
 		</article>
 	);
 };
@@ -34,7 +34,7 @@ const Banner = ({ data, total }: BannerProps) => {
 			</div>
 			<div className="total">
 				<span className="title">Amount Due</span>
-				<span className="total-price">£ {total}</span>
+				<span className="total-price">£ {total.toLocaleString('en-US')}</span>
 			</div>
 		</section>
 	);
